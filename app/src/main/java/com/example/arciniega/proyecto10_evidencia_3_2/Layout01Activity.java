@@ -1,29 +1,29 @@
 package com.example.arciniega.proyecto10_evidencia_3_2;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class Layout01Activity extends AppCompatActivity {
     // Declaración de Variables
-    private Button btnActivity1;
+    private Button btnMain;
     private Button btnActivity2;
     private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.layout01);
 
-        btnActivity1 = (Button)findViewById(R.id.btnLayout1);
+        btnMain = (Button)findViewById(R.id.btnMain);
         btnActivity2 = (Button)findViewById(R.id.btnLayout2);
 
-        btnActivity1.setOnClickListener(new View.OnClickListener() {
+        btnMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                llamarActivity01(v);
+                llamarActivityMain(v);
             }
         });
 
@@ -35,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void llamarActivity01(View view){
-
-        intent = new Intent(this, Layout01Activity.class);
-        startActivity(intent);
-    }
-
     public void llamarActivity02(View view){
 
         intent = new Intent(this, Layout02Activity.class);
+        startActivity(intent);
+    }
+
+    public void llamarActivityMain(View view){
+
+        intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
     }
